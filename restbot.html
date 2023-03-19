@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Status Online/Offline</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 8px;
+        font-family: "Arial", sans-serif; /* replace with your desired font */
+      }
+    </style>
+    <h1><span id="status">Loading...</span></h1>
+    <script>
+      let date = new Date();
+      let hour = date.getHours();
+
+      if (hour >= 2 && hour < 5 || hour === 14 || hour === 21 || hour == 24) {
+        // ganti status menjadi offline
+        document.getElementById("status").innerText = "Offline";
+      } else {
+        // ganti status menjadi online
+        document.getElementById("status").innerText = "online";
+      }
+    </script>
+  </body>
+</html>
